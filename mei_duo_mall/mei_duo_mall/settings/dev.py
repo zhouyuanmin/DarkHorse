@@ -27,7 +27,8 @@ SECRET_KEY = 'v8r=kds&ddf&1r#1pme=s&h-#=-jqx&crt+sv+xn7gc+25o4&+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# 允许那些域名访问Django
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'www.mei' + 'duo.site', 'api.mei' + 'duo.site']
 
 # Application definition
 
@@ -40,9 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'users.apps.UsersConfig',
+    'cors' + 'headers',
 ]
+print(INSTALLED_APPS)
 
 MIDDLEWARE = [
+    'cors' + 'headers.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -196,6 +200,16 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'users.User'
+
+# CORS  追加白名单
+CORS_ORIGIN_WHITELIST = (
+    '127.0.0.1:8080',
+    'localhost:8080',
+    'www.mei' + 'duo.site:8080',
+    'api.mei' + 'duo.site:8000'
+)
+
+CORS_ALLOW_CREDENTIALS = True  # 跨域时允许携带cookie
 
 """
 数据库 mei_duo_mall
