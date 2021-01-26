@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -185,6 +186,8 @@ REST_FRAMEWORK = {
     # 异常处理
     'EXCEPTION_HANDLER': 'mei_duo_mall.utils.exceptions.exception_handler',
 }
+
+AUTH_USER_MODEL = 'users.User'
 
 """
 数据库 mei_duo_mall
