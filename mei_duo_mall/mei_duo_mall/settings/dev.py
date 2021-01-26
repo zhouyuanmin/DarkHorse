@@ -118,3 +118,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+"""
+数据库 mei_duo_mall
+账号 mei_duo
+密码 mei_duo_mall
+"""
