@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'v8r=kjpzgtzi&1r#1pme=s&h-#=-jqxcrtsv+xn7gcji25o4&+'
+SECRET_KEY = 'v8r=kds&ddf&1r#1pme=s&h-#=-jqx&crt+sv+xn7gc+25o4&+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -145,10 +145,10 @@ LOGGING = {
     'disable_existing_loggers': False,  # 是否禁用已经存在的日志器
     'formatters': {  # 日志信息显示的格式
         'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(lineno)d %(message)s'
+            'format': '%(level' + 'name)s %(asc' + 'time)s %(module)s %(lineno)d %(message)s'
         },
         'simple': {
-            'format': '%(levelname)s %(module)s %(lineno)d %(message)s'
+            'format': '%(level' + 'name)s %(module)s %(lineno)d %(message)s'
         },
     },
     'filters': {  # 对日志进行过滤
@@ -166,7 +166,7 @@ LOGGING = {
         'file': {  # 向文件中输出日志
             'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(os.path.dirname(BASE_DIR), "logs/meiduo.log"),  # 日志文件的位置
+            'filename': os.path.join(os.path.dirname(BASE_DIR), "logs/mei_duo.log"),  # 日志文件的位置
             'maxBytes': 300 * 1024 * 1024,
             'backupCount': 10,
             'formatter': 'verbose'
@@ -183,7 +183,7 @@ LOGGING = {
 
 REST_FRAMEWORK = {
     # 异常处理
-    'EXCEPTION_HANDLER': 'meiduo_mall.utils.exceptions.exception_handler',
+    'EXCEPTION_HANDLER': 'mei_duo_mall.utils.exceptions.exception_handler',
 }
 
 """
